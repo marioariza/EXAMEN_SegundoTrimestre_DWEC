@@ -11,4 +11,8 @@ router.get('/contacto', (req, res) => {
     res.render("contacto", {tituloContacto: "Estamos en contacto de manera dinámica!"})
 })
 
+router.use((req, res) => {
+    res.status(404).render('404', {titulo: "Error 404", descripcion: "Page not Found"})
+})
+
 module.exports = router;

@@ -2,7 +2,10 @@
 
 <div class="container">
 
-    <table class="table">
+    <h1>CRUD MongoDB</h1>
+    <a class="btn btn-success btn-block my-4" href="/pilotos/crear">Crear nuevo piloto</a>
+
+    <table class="table text-center">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -29,7 +32,7 @@
                     <tr>
                         <th scope="row"><%= pilotos.id %></th>
                         <td><%= pilotos.nombre %></td>
-                        <td><%= pilotos.edad %></td>
+                        <td><%= pilotos.edad %> años</td>
                         <td><%= pilotos.nacionalidad %></td>
                         <td><%= pilotos.numParrilla %></td>
                         <td><%= pilotos.numCarreras %></td>
