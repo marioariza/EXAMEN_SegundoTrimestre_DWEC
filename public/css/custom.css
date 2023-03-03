@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Textos';
+    src: url(../fonts/Formula1.ttf);
+}
+
+* {
+    font-family: 'Textos';
+}
+
+table {
+    font-size: 0.85em;
+}
