@@ -7,8 +7,7 @@ app = express();
 require('dotenv').config();
 let port = process.env.PORT || 3000;
 
-app.use(express.static(__dirname +'/public/'));
-// app.use('/favicon.jpg', express.static('public/img/favicon.jpg'));
+app.use(express.static(__dirname + '/public/'));
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views/')
