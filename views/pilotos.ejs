@@ -1,0 +1,50 @@
+<%- include("template/cabecera", {tituloWeb: 'Fórmula 1 | Pilotos'})%>
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Nacionalidad</th>
+                <th scope="col">Número de parrilla</th>
+                <th scope="col">Número de carreras</th>
+                <th scope="col">Número de victorias</th>
+                <th scope="col">Número de podios</th>
+                <th scope="col">Equipo actual</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <!-- Si existen elementos en el array de Pilotos -->
+        <% if(arrayPilotos.length > 0) { %>
+
+            <!-- Haremos el forEach para recorrer el array -->
+            <% arrayPilotos.forEach(pilotos => { %>
+
+                <!-- Mostramos todos los pilotos en una tabla -->
+                    <tr>
+                        <th scope="row"><%= pilotos.id %></th>
+                        <td><%= pilotos.nombre %></td>
+                        <td><%= pilotos.edad %></td>
+                        <td><%= pilotos.nacionalidad %></td>
+                        <td><%= pilotos.numParrilla %></td>
+                        <td><%= pilotos.numCarreras %></td>
+                        <td><%= pilotos.numVictorias %></td>
+                        <td><%= pilotos.numPodios %></td>
+                        <td><%= pilotos.equipoActual %></td>
+                        <td>Editar / Borrar</td>
+                    </tr>
+                  
+            <% }) %>
+        <% } %> 
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
