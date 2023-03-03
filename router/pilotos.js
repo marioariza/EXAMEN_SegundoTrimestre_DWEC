@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Pilotos = require('../models/Pilotos');
+const Pilotos = require('../models/pilotos');
 
 router.get('/', async (req, res) => {
 

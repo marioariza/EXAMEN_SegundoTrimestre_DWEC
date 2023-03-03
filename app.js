@@ -20,14 +20,10 @@ app.use('/pilotos', require('./router/pilotos'));
 
 // Variables que tendremos siempre:
 
-const user = 'marioariza';
-const password = 'marioariza';
-const dbname = 'pilotos';
-
 // URL de conexión
-const uri = `mongodb+srv://marioariza:<password>@cluster0.njgr5tz.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.njgr5tz.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
-moongose.connect(uri,
+mongoose.connect(uri,
     { useNewUrlParser: true, useUnifiedTopology: true }
 )
     .then(() => console.log('Base de datos conectada'))
