@@ -20,6 +20,10 @@ app.use('/pilotos', require('./router/pilotos'));
 
 // Variables que tendremos siempre:
 
+const user = '';
+const password = '';
+const dbname = '';
+
 // URL de conexión
 const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.njgr5tz.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
