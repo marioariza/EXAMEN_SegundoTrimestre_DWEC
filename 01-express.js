@@ -1,19 +1,17 @@
 'use strict'
 
-let express = require('express'),
-    app = express(),
-    ruta = app.use(express.static(__dirname+'/assets/'));
+let express = require('express');
+let app = express();
 
-    app.set('view engine', 'ejs')
-    app.set('views', __dirname + 'views/')
+app.use(express.static(__dirname +'/public/'));
 
-app
-    .get('/', (req, res) => {
-        res.redirect("index", {titulo: "mi título dinámico"})
-    })
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views/')
 
-    .use((req, res) => {
-        res.status(404).sendFile(`${__dirname}/assets/404.html`)
+app.use('/', require('./router/rutas'));
+
+app.use((req, res) => {
+        res.status(404).render('404', {titulo: "Error 404", descripcion: "Page not Found"})
     })
 
     .listen(3000)
