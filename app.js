@@ -25,7 +25,7 @@ const password = '';
 const dbname = '';
 
 // URL de conexión
-const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.njgr5tz.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.njgr5tz.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
 mongoose.connect(uri,
     { useNewUrlParser: true, useUnifiedTopology: true }
