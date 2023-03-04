@@ -17,7 +17,7 @@ table {
   height: 100px;
   padding: 0px;
   margin: 0px;
-  background-image: url(/img/cuadros.jpg);
+  background-image: url(/img/cuadros.gif);
 }
 
 #gradient2
@@ -26,7 +26,7 @@ table {
   height: 60px;
   padding: 0px;
   margin: 0px;
-  background-image: url(/img/cuadros.jpg);
+  background-image: url(/img/cuadros.gif);
 }
 
 .error {
