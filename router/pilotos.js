@@ -26,9 +26,49 @@ router.post('/', async (req, res) => {
     try {
         const pilotosDB = new Pilotos(body)
         await pilotosDB.save()
-        res.redirect('/pilotos')
+        res.redirect('/')
     } catch (error) {
         console.log('error', error)
+    }
+})
+
+router.get('/:id', async(req, res) => {
+    const id = req.params.id
+    try {
+        const pilotosDB = await Pilotos.findOne({ _id:id })
+        console.log(pilotosDB)
+        res.render('detalles', {
+            piloto: pilotosDB,
+            error: false
+        })
+    } catch (error) {
+        console.log('Se ha producido un error', error)
+        res.render('detalles', {
+            error: true,
+            mensaje: 'Piloto no encontrado!'
+        })
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id
+    console.log('_id desde backend', id)
+    try {
+        const pilotosDB = await Pilotos.findByIdAndDelete({ _id: id });
+        console.log(pilotosDB)
+        if (!pilotosDB) {
+            res.json({
+                estado: false,
+                mensaje: 'No se puede eliminar el piloto.'
+            })
+        } else {
+            res.json({
+                estado: true,
+                mensaje: 'Piloto eliminado.'
+            })
+        }
+    } catch (error) {
+        console.log(error)
     }
 })
 

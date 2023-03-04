@@ -1,9 +1,10 @@
 <%- include("template/cabecera", {tituloWeb: 'Fórmula 1 | Pilotos'})%>
 
-<div class="container">
+<div class="container-fluid">
 
-    <h1>CRUD MongoDB</h1>
-    <a class="btn btn-success btn-block my-4" href="/pilotos/crear">Crear nuevo piloto</a>
+    <h1 class="m-4 text-center">CRUD MongoDB - Formula <span class="text-danger">1</span></h1>
+    <div id="gradient"></div>
+    <a class="btn btn-dark btn-block my-4" href="/crear">Crear nuevo piloto</a>
 
     <table class="table text-center">
         <thead>
@@ -39,7 +40,7 @@
                         <td><%= pilotos.numVictorias %></td>
                         <td><%= pilotos.numPodios %></td>
                         <td><%= pilotos.equipoActual %></td>
-                        <td>Editar / Borrar</td>
+                        <td><a class="btn btn-warning btn-sm" href="/<%= pilotos._id %>">Editar / Eliminar</a></td>
                     </tr>
                   
             <% }) %>
@@ -49,5 +50,4 @@
     </table>
 </div>
 
-</body>
-</html>
+<%- include('template/footer') %>

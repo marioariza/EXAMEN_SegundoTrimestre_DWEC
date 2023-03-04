@@ -21,8 +21,7 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views/')
 
 // Routes
-// app.use('/', require('./router/rutas'));
-app.use('/pilotos', require('./router/pilotos'));
+app.use('/', require('./router/pilotos'));
 
 // MongoDB
 
@@ -35,6 +34,10 @@ mongoose.connect(uri,
     .then(() => console.log('Base de datos conectada'))
     .catch(e => console.log(e))
 
-app.listen(port)
+app.use((req, res) => {
+    res.status(404).render('404', {titulo: "Error 404", descripcion: "Page not Found"})
+    })
+    
+    .listen(port)
 
 console.log('Iniciando Express en el puerto 4000')

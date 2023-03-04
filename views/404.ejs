@@ -1,6 +1,13 @@
-<%- include("template/cabecera", {tituloWeb: '404'})%>
+<%- include("template/cabecera", {tituloWeb: 'Fórmula 1 | Error 404'})%>
 
-    <h1><%= titulo %></h1>
+<div class="container text-center error">
+    <h1 class="text-danger"><%= titulo %></h1>
+    <br>
     <h2><%= descripcion %></h2>
+    <br>
+    <img src="/img/imagenerror.jpeg" alt="..." width="390" height="200">
+    <a class="btn btn-dark btn-block my-4" href="/">Ir a inicio</a>
+</div>
+
 </body>
 </html>

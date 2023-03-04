@@ -1,8 +1,9 @@
 <%- include("template/cabecera", {tituloWeb: 'Fórmula 1 | Crear Piloto'})%>
 
 <div class="container">
-    <h2>Crear nuevo Piloto F1</h2>
-    <form action="/pilotos" class="my-2" method="POST">
+    <h2 class="m-4 text-center">Crear pilotos - Formula <span class="text-danger">1</span></h2>
+    <div id="gradient"></div>
+    <form action="/" class="my-2 letras_form" method="POST">
     <input type="number" placeholder="Id" class="form-control my-2" name="id">
     <input type="text" placeholder="Nombre" class="form-control my-2" name="nombre">
     <input type="number" placeholder="Edad" class="form-control my-2" name="edad">
@@ -262,5 +263,5 @@
     </select>
     <button type="submit" class="btn btn-dark btn-block">Crear</button>
     </form>
-</body>
-</html>
+
+<%- include('template/footer') %>
