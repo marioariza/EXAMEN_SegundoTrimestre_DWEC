@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async(req, res) => {
+router.get('/detalles/:id', async(req, res) => {
     const id = req.params.id
     try {
         const pilotosDB = await Pilotos.findOne({ _id:id })
@@ -69,6 +69,29 @@ router.delete('/:id', async (req, res) => {
         }
     } catch (error) {
         console.log(error)
+    }
+})
+
+router.put('/detalles/:id', async (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+    console.log(id)
+    console.log('body', body)
+    try {
+        const pilotosDB = await Pilotos.findByIdAndUpdate(
+            id, body, { useFindAndModify: false }
+        )
+        console.log(pilotosDB)
+        res.json({
+            estado: true,
+            mensaje: 'Piloto editado'
+        })
+    } catch (error) {
+        console.log(error)
+        res.json({
+            estado: false,
+            mensaje: 'Problema al editar el piloto'
+        })
     }
 })
 
