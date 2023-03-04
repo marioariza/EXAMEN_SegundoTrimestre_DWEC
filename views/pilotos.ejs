@@ -41,7 +41,7 @@
                         <td><%= pilotos.numPodios %></td>
                         <td><%= pilotos.equipoActual %></td>
                         <td><a class="btn btn-dark btn-sm" href="/detalles/<%= pilotos._id %>">Editar</a>
-                            <button id="eliminar" class="btn btn-danger btn-sm" data-id="<%=  pilotos._id %>">Eliminar</button></td>
+                            <button id="eliminar<% pilotos._id %>" class="btn btn-danger btn-sm" data-id="<%= pilotos._id %>" onclick="eliminar(this)">Eliminar</button></td>
                     </tr>
     
             <% }) %>
@@ -54,9 +54,8 @@
 <%- include('template/footer') %>
 
 <script defer>
-    const btnEliminar = document.getElementById('eliminar')
-    btnEliminar.addEventListener('click', async () => {
-        console.log(btnEliminar.dataset.id)
+    async function eliminar(button) {
+        const btnEliminar = button;
         try {
             const data = await fetch(`/${btnEliminar.dataset.id}`, {
                 method: 'delete'
@@ -71,5 +70,5 @@
         } catch (error) {
             console.log(error)
         }
-    })
+    }
 </script>
