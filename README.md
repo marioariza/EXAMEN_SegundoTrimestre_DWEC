@@ -3,4 +3,5 @@ Examen segundo trimestre Desarrollo Web Entorno Cliente
 
 ## LEVANTAR SERVIDOR Y BBDD
 
+- npm install
 - npm run dev
